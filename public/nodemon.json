@@ -1,0 +1,8 @@
+{
+  "delay": "1000",
+  "ignoreRoot": [".git"],
+  "ignore": [
+    "build",
+    "dist"
+  ]
+}

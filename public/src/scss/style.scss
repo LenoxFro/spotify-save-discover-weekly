@@ -1,0 +1,12 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import CoreUI Pro styles with default layout
+@import "node_modules/@coreui/coreui-pro/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+
+// Spinkit
+$spinkit-spinner-color: $body-color;
+@import "node_modules/spinkit/scss/spinkit.scss";

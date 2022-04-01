@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <base href="./">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="Spotify Weekly Playlists">
+  <meta name="author" content="Lennard Fröhlich">
+  <title>Spotify Weekly Playlists</title>
+  <!-- Main styles for this application-->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css" rel="stylesheet">
+  <link href="node_modules/@coreui/icons/css/brand.min.css" rel="stylesheet">
+</head>
+
+<body class="c-app c-no-layout-transition c-dark-theme">
+  <p id="variables" hidden></p>
+
+  <div class="c-wrapper">
+    <header class="c-header c-header-light c-header-fixed">
+      <a class="c-header-brand c-header-brand-xs-up-center" href="#">
+        <img src="assets/brand/spotify.svg" width="118" height="46" alt="Spotify Logo">
+      </a>
+      <ul class="c-header-nav mfs-auto">
+        <li class="c-header-nav-item px-3 c-d-legacy-none">
+          <button class="c-class-toggler c-header-nav-btn" type="button" id="header-tooltip" data-target="body"
+            data-class="c-dark-theme" data-toggle="c-tooltip" data-placement="bottom" title="Toggle Light/Dark Mode">
+            <svg class="c-icon c-d-dark-none">
+              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-moon"></use>
+            </svg>
+            <svg class="c-icon c-d-default-none">
+              <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-sun"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </header>
+    <div class="c-body">
+      <main class="c-main">
+        <div class="container-fluid">
+          <div class="fade-in">
+            <div class="row" id="spotify-user-select">
+            </div>
+
+            <!-- User Lenox Playlists -->
+            <div class="row hidden" id="lenoxfro-playlist-wrapper"> 
+              <div class="col-sm-12">
+                <div class="card text-white spotify-playlists">
+                  <button class="btn btn-ghost-success return-user-select" type="button">
+                    <svg class="c-icon">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-arrow-left"></use>
+                    </svg>
+                  </button>
+                  <table class="table table-responsive-xs table-hover table-outline mb-0">
+                    <thead class="thead-light">
+                      <tr>
+                        <th class="text-center">
+                          <i class="c-icon c-icon-xl cib-spotify icon-pull-down"></i>
+                        </th>
+                        <th>Playlist Name</th>
+                        <th>Activity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+            <!-- ./ User Lenox Playlists -->
+
+            <!-- User Dennis Playlists -->
+            <div class="row hidden" id="dennis-playlist-wrapper">
+              <div class="col-sm-12">
+                <div class="card text-white spotify-playlists">
+                  <button class="btn btn-ghost-success return-user-select" type="button">
+                    <svg class="c-icon">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-arrow-left"></use>
+                    </svg>
+                  </button>
+                  <table class="table table-responsive-sm table-hover table-outline mb-0">
+                    <thead class="thead-light">
+                      <tr>
+                        <th class="text-center">
+                          <i class="c-icon c-icon-xl cib-spotify icon-pull-down"></i>
+                        </th>
+                        <th>Playlist Name</th>
+                        <th>Activity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+            <!-- ./ User Dennis Playlists -->
+
+            <!-- User Jens Playlists -->
+            <div class="row hidden" id="jens-playlist-wrapper">
+              <div class="col-sm-12">
+                <div class="card text-white spotify-playlists">
+                  <button class="btn btn-ghost-success return-user-select" type="button">
+                    <svg class="c-icon">
+                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-arrow-left"></use>
+                    </svg>
+                  </button>
+                  <table class="table table-responsive-sm table-hover table-outline mb-0">
+                    <thead class="thead-light">
+                      <tr>
+                        <th class="text-center">
+                          <i class="c-icon c-icon-xl cib-spotify icon-pull-down"></i>
+                        </th>
+                        <th>Playlist Name</th>
+                        <th>Activity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+            <!-- ./ User Jens Playlists -->
+
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer class="c-footer">
+      <div><a href="https://lenox-fro.de">LenoxFro</a> &copy; 2022</div>
+      <div class="mfs-auto">Powered by&nbsp;<a href="https://coreui.io/pro/">CoreUI Pro</a></div>
+    </footer>
+  </div>
+  <!-- CoreUI and necessary plugins-->
+  <script src="node_modules/@coreui/coreui-pro/dist/js/coreui.bundle.min.js"></script>
+  <!--[if IE]><!-->
+  <script src="node_modules/@coreui/icons/js/svgxuse.min.js"></script>
+  <!--<![endif]-->
+  <!-- Plugins and scripts required by this view-->
+  <script src="js/spotify.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      setTimeout(function () {
+        document.body.classList.remove('c-no-layout-transition')
+      }, 2000);
+    });
+  </script>
+</body>
+
+</html>

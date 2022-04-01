@@ -1,0 +1,80 @@
+// Here you can add other styles
+.hidden {
+    display: none; 
+}
+
+.transition.hidden {
+    display: flex;
+    opacity: 0;
+    max-height: 0px;
+}
+
+.transition {
+    transition: all 1.5s ease;
+}
+
+tr.hidden {
+    display: none !important;
+}
+
+tr.transition.hidden {
+    display: table-row !important;
+    max-height: 0px;
+}
+
+tr.transition {
+    transition: all 0.5s ease;
+}
+
+
+
+.spotify-card {
+    margin: 35px;
+    background-size: contain;
+    height: auto;
+    img {
+        border-radius: 0.25rem;
+    }
+    .card-body {
+        position: absolute;
+    }
+    .c-chart-wrapper {
+        height: 180px;
+        width: 100%;
+    }
+    iframe {
+        border-radius: 0.25rem;
+        position: relative;
+        bottom: 100px;
+    }
+}
+
+.spotify-playlists {
+    margin: 35px;
+
+    tbody tr {
+        height: 100px;
+
+        .badge {
+            position: absolute;
+            top: 20px;
+        }
+    }
+}
+
+.spotify-playlist-dropdown-target {
+    display: table-row;
+
+    td {
+        border-top: 0px;
+        padding-top: 0;
+    }
+    iframe {
+        border-radius: 0.25rem;
+    }
+}
+
+.icon-pull-down {
+    bottom: -4px;
+    position: relative;
+}

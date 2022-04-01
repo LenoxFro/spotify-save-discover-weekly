@@ -1,0 +1,96 @@
+{
+    "items": [
+        {
+            "collaborative": false,
+            "description": "2022 Lenox Week 13",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/0sDu4kUNd1QOn6eGUjijSN"
+            },
+            "href": "https://api.spotify.com/v1/playlists/0sDu4kUNd1QOn6eGUjijSN",
+            "id": "0sDu4kUNd1QOn6eGUjijSN",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://mosaic.scdn.co/640/ab67616d0000b2730f627e938557d9c27c0ccbffab67616d0000b273212851fda41a8c480b168a2eab67616d0000b273e792d878115ea81ede71bd49ab67616d0000b273fb4b69ae9209a665b9f9dd57",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://mosaic.scdn.co/300/ab67616d0000b2730f627e938557d9c27c0ccbffab67616d0000b273212851fda41a8c480b168a2eab67616d0000b273e792d878115ea81ede71bd49ab67616d0000b273fb4b69ae9209a665b9f9dd57",
+                    "width": 300
+                },
+                {
+                    "height": 60,
+                    "url": "https://mosaic.scdn.co/60/ab67616d0000b2730f627e938557d9c27c0ccbffab67616d0000b273212851fda41a8c480b168a2eab67616d0000b273e792d878115ea81ede71bd49ab67616d0000b273fb4b69ae9209a665b9f9dd57",
+                    "width": 60
+                }
+            ],
+            "name": "2022 Lenox Week 13",
+            "owner": {
+                "display_name": "Lenox Fro",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/lenoxfro"
+                },
+                "href": "https://api.spotify.com/v1/users/lenoxfro",
+                "id": "lenoxfro",
+                "type": "user",
+                "uri": "spotify:user:lenoxfro"
+            },
+            "primary_color": null,
+            "public": false,
+            "snapshot_id": "Myw0YTBkMDA1OWJiNjgwODc2NmY2ZTVjYzBhNWRmMTQ2ZDIxMTNmNWEx",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/0sDu4kUNd1QOn6eGUjijSN/tracks",
+                "total": 30
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:0sDu4kUNd1QOn6eGUjijSN"
+        },
+        {
+            "collaborative": false,
+            "description": "",
+            "external_urls": {
+                "spotify": "https://open.spotify.com/playlist/7JY1UMalQpZU2BhXbH1X5A"
+            },
+            "href": "https://api.spotify.com/v1/playlists/7JY1UMalQpZU2BhXbH1X5A",
+            "id": "7JY1UMalQpZU2BhXbH1X5A",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://mosaic.scdn.co/640/ab67616d0000b2732ba565040c3b5c2f4729690aab67616d0000b273a26af87c1ee4bce8ab7f39daab67616d0000b273dbebdb92011a2a588807acb6ab67616d0000b273e57ae19da6fa0d080f86f2bd",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://mosaic.scdn.co/300/ab67616d0000b2732ba565040c3b5c2f4729690aab67616d0000b273a26af87c1ee4bce8ab7f39daab67616d0000b273dbebdb92011a2a588807acb6ab67616d0000b273e57ae19da6fa0d080f86f2bd",
+                    "width": 300
+                },
+                {
+                    "height": 60,
+                    "url": "https://mosaic.scdn.co/60/ab67616d0000b2732ba565040c3b5c2f4729690aab67616d0000b273a26af87c1ee4bce8ab7f39daab67616d0000b273dbebdb92011a2a588807acb6ab67616d0000b273e57ae19da6fa0d080f86f2bd",
+                    "width": 60
+                }
+            ],
+            "name": "2022 Lenox Week 12",
+            "owner": {
+                "display_name": "Lenox Fro",
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/user/lenoxfro"
+                },
+                "href": "https://api.spotify.com/v1/users/lenoxfro",
+                "id": "lenoxfro",
+                "type": "user",
+                "uri": "spotify:user:lenoxfro"
+            },
+            "primary_color": null,
+            "public": false,
+            "snapshot_id": "NiwxYzQ5ODdhNWEwZWRmNTljNTIzNzI3ZDBkNjllZjE3ZmJkMmMwYTZj",
+            "tracks": {
+                "href": "https://api.spotify.com/v1/playlists/7JY1UMalQpZU2BhXbH1X5A/tracks",
+                "total": 29
+            },
+            "type": "playlist",
+            "uri": "spotify:playlist:7JY1UMalQpZU2BhXbH1X5A"
+        }
+    ]
+}

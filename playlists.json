@@ -1,6 +1,14 @@
 {
-    "user1": {
-        "weekly": "PlaylistID",
-        "prefix": "User1 Week"
+    "lenox": {
+        "weekly": "37i9dQZEVXcBPn9SEOeNej",
+        "prefix": "Lenox Week"
+    },
+    "jens" : {
+        "weekly": "37i9dQZEVXcT4AndtV16KB",
+        "prefix": "Jens Week"
+    },
+    "dennis": {
+        "weekly": "37i9dQZEVXcWhk6HjaEP8K",
+        "prefix": "Dennis Week"
     }
 }
