@@ -143,6 +143,6 @@ def main():
     
     exportFile.close()
     #upload File
-    # ftp.storbinary('STOR playlists.json', open('export.json', 'rb'))
+    ftp.storbinary('STOR playlists.json', open('export.json', 'rb'))
 
 main()
