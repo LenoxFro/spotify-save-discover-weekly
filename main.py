@@ -5,13 +5,23 @@ import base64
 import json
 import os
 import datetime
+import ftplib
 
 load_dotenv(find_dotenv())
 REFRESH_TOKEN = os.environ.get("REFRESH_TOKEN").strip()
 CLIENT_ID     = os.environ.get("CLIENT_ID").strip()
 CLIENT_SECRET = os.environ.get("CLIENT_SECRET").strip()
+FTP_SERV      = os.environ.get("FTP_SERV").strip()
+FTP_USER      = os.environ.get("FTP_USER").strip()
+FTP_PASS      = os.environ.get("FTP_PASS").strip()
 
 OAUTH_TOKEN_URL = "https://accounts.spotify.com/api/token"
+
+def ftp_login():
+    ftp = ftplib.FTP_TLS(FTP_SERV)
+    ftp.login(user=FTP_USER, passwd=FTP_PASS)
+    return ftp
+
 def refresh_access_token():
     payload        = {
         "refresh_token": REFRESH_TOKEN,
@@ -27,8 +37,8 @@ def refresh_access_token():
     return response.json()
 
 
-def get_playlist(access_token, weekly_id):
-    url     = "https://api.spotify.com/v1/playlists/%s" % weekly_id
+def get_playlist(access_token, playlist_id):
+    url     = "https://api.spotify.com/v1/playlists/%s" % playlist_id
     headers = {
        "Content-Type": "application/json",
        "Authorization": "Bearer %s" % access_token
@@ -63,6 +73,24 @@ def add_to_playlist(access_token, tracklist, new_playlist):
     response = requests.post(url, data=json.dumps(payload), headers=headers)
     return response.json()
 
+def find_user(json, name):
+    for user in json['users']:
+        if user['name'] == name:
+            return user
+
+def update_user(json, newUser):
+    for user in json['users']:
+        if user['name'] == newUser['name']:
+            user = newUser
+            return json
+
+def get_playlist_tracks(access_token, playlist):
+    response = get_playlist(access_token, playlist)
+    return response['tracks']['total']
+
+def get_playlist_image(access_token, playlist):
+    response = get_playlist(access_token, playlist)
+    return response['images'][0]['url']
 
 def main():
     if REFRESH_TOKEN is None or CLIENT_ID is None or CLIENT_SECRET is None:
@@ -72,22 +100,49 @@ def main():
     today        = datetime.date.today()
     access_token = refresh_access_token()['access_token']
 
+    ftp          = ftp_login()
+    exportFile   = open('export.json', 'wb')
+    ftp.retrbinary('RETR playlists.json', exportFile.write, 1024)
+    exportFile.close()
+
+    export       = json.load(open('export.json', 'r'))
+
     #get all playlists to save
-    f = open('playlists.json')
+    f              = open('playlists.json')
     playlistConfig = json.load(f)
-    for playlist in playlistConfig:
-        playlist = playlistConfig[playlist]
+    for username in playlistConfig:
+        playlist = playlistConfig[username]
         name     = str(today.isocalendar().year) + ' ' + playlist['prefix'] + ' ' + str(today.isocalendar().week)
 
         tracks    =  get_playlist(access_token, playlist['weekly'])['tracks']['items']
         tracklist = []
         for item in tracks:
             tracklist.append(item['track']['uri'])
-        response = add_to_playlist(access_token, tracklist, create_playlist(access_token, name))
-    
+
+        newPlaylistId = create_playlist(access_token, name)
+        response = add_to_playlist(access_token, tracklist, newPlaylistId)
+
+        newPlaylistObj = {
+            "id": newPlaylistId,
+            "name": name,
+            "image": get_playlist_image(access_token, newPlaylistId),
+            "week": "KW " + str(today.isocalendar().week),
+            "trackCount": get_playlist_tracks(access_token, newPlaylistId)
+        }
+        
+        user = find_user(export, username)
+        user['playlists'].insert(1, newPlaylistObj)
+        export = update_user(export, user)
+        json.dump(export, open('export.json', 'w'))
+        
+
         if "snapshot_id" in response:
             print("Successfully added all songs to \"" + name + "\"")
         else:
             print(response)
+    
+    exportFile.close()
+    #upload File
+    # ftp.storbinary('STOR playlists.json', open('export.json', 'rb'))
 
 main()
