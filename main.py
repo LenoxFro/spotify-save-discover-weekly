@@ -1,3 +1,4 @@
+from time import sleep
 from urllib import response
 from dotenv import load_dotenv, find_dotenv
 import requests
@@ -121,6 +122,8 @@ def main():
 
         newPlaylistId = create_playlist(access_token, name)
         response = add_to_playlist(access_token, tracklist, newPlaylistId)
+
+        sleep(5)
 
         newPlaylistObj = {
             "id": newPlaylistId,
