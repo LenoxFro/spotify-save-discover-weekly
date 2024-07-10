@@ -1,3 +1,6 @@
+# MacOS
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -26,6 +29,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+export.json
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -129,3 +133,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 playlists.json
+
+#docker
+docker/
+docker.tar
+
+# IDE
+.idea/

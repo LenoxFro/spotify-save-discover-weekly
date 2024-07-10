@@ -48,7 +48,8 @@ def get_playlist(access_token, playlist_id):
     return response.json()
 
 def create_playlist(access_token, name):
-    url     = "https://api.spotify.com/v1/users/lenoxfro/playlists"
+    #url     = "https://api.spotify.com/v1/users/lenoxfro/playlists"
+    url     = "https://api.spotify.com/v1/users/31uyjhexjxswkhnqf5mlib3xx2fi/playlists"
     payload = {
         "name": name,
         "description": name,
@@ -59,7 +60,6 @@ def create_playlist(access_token, name):
         "Authorization": "Bearer %s" % access_token
     }
     response = requests.post(url, data=json.dumps(payload), headers=headers)
-
     return response.json()['id']
 
 def add_to_playlist(access_token, tracklist, new_playlist):
